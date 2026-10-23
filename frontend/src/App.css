@@ -1,0 +1,96 @@
+/* Layout and responsive behavior for GazeMouse-OS */
+
+.app-root {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--color-bg-main);
+  color: var(--color-text-main);
+}
+
+.content-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin-left: var(--sidebar-width-expanded);
+  transition: margin-left var(--transition-normal);
+  width: calc(100% - var(--sidebar-width-expanded));
+}
+
+.content-wrapper.collapsed {
+  margin-left: var(--sidebar-width-collapsed);
+  width: calc(100% - var(--sidebar-width-collapsed));
+}
+
+.page-container {
+  flex: 1;
+  padding: var(--space-2xl) var(--space-lg);
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Sidebar interactive elements */
+.nav-item-btn:hover:not(.active) {
+  background-color: var(--color-light-blue);
+  color: var(--color-deep-blue);
+}
+
+.desktop-collapse-btn:hover {
+  background-color: var(--color-light-blue);
+  color: var(--color-deep-blue);
+}
+
+/* Card hover */
+.gazemouse-card.interactive:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary-blue);
+}
+
+[data-reduced-motion='true'] .gazemouse-card.interactive:hover {
+  transform: none;
+}
+
+/* Button hover */
+.gazemouse-btn:hover:not(:disabled) {
+  opacity: 0.95;
+  filter: brightness(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .content-wrapper {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+
+  .gazemouse-sidebar {
+    transform: translateX(-100%);
+    width: 280px !important;
+  }
+
+  .gazemouse-sidebar.mobile-open {
+    transform: translateX(0);
+  }
+
+  .mobile-hamburger-btn {
+    display: flex !important;
+  }
+
+  .mobile-close-btn {
+    display: flex !important;
+  }
+
+  .desktop-collapse-btn {
+    display: none !important;
+  }
+
+  .theme-toggle-label {
+    display: none;
+  }
+
+  .page-container {
+    padding: var(--space-lg) var(--space-md);
+  }
+}

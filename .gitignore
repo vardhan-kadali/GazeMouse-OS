@@ -1,0 +1,129 @@
+# ==========================================
+# GazeMouse-OS Root .gitignore
+# ==========================================
+
+# ------------------------------------------
+# Sensitive Files & Security Tokens
+# ------------------------------------------
+# Bridge runtime session token (generated per machine at runtime)
+desktop-bridge/.bridge_session_token
+**/.bridge_session_token
+*.bridge_session_token
+*.token
+
+# Credentials, Keys, and Certificates
+*.pem
+*.key
+*.cert
+*.crt
+*.pfx
+*.p12
+
+# Environment Variables & Secrets
+.env
+.env.local
+.env.*.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# ------------------------------------------
+# Node / Frontend (React + TypeScript + Vite)
+# ------------------------------------------
+node_modules/
+frontend/node_modules/
+.pnp
+.pnp.js
+
+# Frontend Build Outputs
+dist/
+dist-ssr/
+frontend/dist/
+frontend/dist-ssr/
+build/
+*.tsbuildinfo
+.eslintcache
+.vite-temp/
+.vitest-cache/
+frontend/node_modules/.vite-temp/
+frontend/node_modules/.vitest-cache/
+
+# ------------------------------------------
+# Python / Desktop Bridge
+# ------------------------------------------
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+
+# Python Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Testing & Coverage Caches
+.pytest_cache/
+**/.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.mypy_cache/
+.ruff_cache/
+
+# Python Build / Distribution
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ------------------------------------------
+# Logs
+# ------------------------------------------
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ------------------------------------------
+# IDE & System Files
+# ------------------------------------------
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.swo
+*.swn
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ------------------------------------------
+# Database & Coursework Storage (if applicable)
+# ------------------------------------------
+backend/data/
+*.db
+*.mv.db
+*.trace.db

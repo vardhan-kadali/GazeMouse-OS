@@ -1,0 +1,6 @@
+# GazeMouse-OS Desktop Input Bridge Dependencies
+# The core daemon runs purely on Python 3.10+ standard library (asyncio, ctypes, secrets, json).
+# The packages below are optional development and testing utilities:
+
+pytest>=7.4.0
+websockets>=12.0.0  # Optional alternative WebSocket client/server backend
